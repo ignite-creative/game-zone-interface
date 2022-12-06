@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'default-font';
+  src: url('../fonts/JosefinSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'second-font';
+  src: url('../fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'third-font';
+  src: url('../fonts/Pacifico-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'forth-font';
+  src: url('../fonts/DancingScript-Regular.ttf');
+}
+
+h1 {
+  font-family: default-font;
+  color: red;
+}
