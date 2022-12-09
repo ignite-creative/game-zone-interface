@@ -1,8 +1,13 @@
 import React from 'react'
-import './assets/styles/app.css'
+import { Outlet } from 'react-router-dom'
+import BasicPage from './layouts/BasicPage'
 
 const App = () => {
-  return <h1> Game Zone </h1>
+  return (
+    <BasicPage>
+      <Outlet />
+    </BasicPage>
+  )
 }
 
 export default App

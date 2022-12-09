@@ -13,6 +13,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.name': JSON.stringify('DEV Ninja'),
     }),
-    new ReactRefreshWebpackPlugin()
+    new ReactRefreshWebpackPlugin(),
   ],
 }
