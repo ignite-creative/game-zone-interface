@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'primary';
+  src: url('./assets/fonts/JosefinSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'second';
+  src: url('./assets/fonts/Lobster-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'third';
+  src: url('./assets/fonts/Pacifico-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'forth';
+  src: url('./assets/fonts/DancingScript-Regular.ttf');
+}
+
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'primary';
+}
+
+#root {
+  @apply bg-gray-900 flex justify-center items-center;
+}
+
+#main-panel {
+  @apply flex w-full h-full;
+}
+
+#side-nav {
+  @apply flex flex-col justify-center items-center border-double border-r-2 border-gray-800 my-3 bg-transparent md:p-4 sm:p-3 p-3;
+}
+
+.nav-btn {
+  @apply md:my-2 md:p-2 sm:my-1 sm:p-1 p-1 my-1  rounded-lg border border-transparent hover:border-gray-800;
+}
+
+.nav-btn-active {
+  @apply bg-sky-400
+}
+
+#main-board {
+  @apply rounded-lg ml-2 w-full h-full p-4;
+}
+
+#header {
+  @apply w-full py-4 flex justify-between items-center;
+}
+
+#header-search-bar {
+  @apply rounded-full bg-gray-800 text-gray-300 flex md:w-1/6 hover:shadow-md hover:shadow-sky-500/40;
+}
+
+.search-bar-icon {
+  @apply w-4 h-4;
+}
+
+.search-bar-input {
+  @apply bg-transparent outline-0 ml-2;
+}
