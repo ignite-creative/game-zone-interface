@@ -15,7 +15,10 @@ const SideHeader = () => {
   }
 
   return (
-    <div id="side-nav">
+    <div
+      id="side-nav"
+      className="flex flex-col justify-center items-center border-double border-r-2 border-gray-800 my-3 bg-transparent md:p-4 sm:p-3 p-3"
+    >
       <NavBtn
         icon={HomeIcon}
         alt="nav-home-btn"

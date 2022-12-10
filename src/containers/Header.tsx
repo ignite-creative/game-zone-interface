@@ -1,47 +1,78 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, Fragment } from 'react'
 import SearchBar from '../components/Header/SearchBar'
 import HeaderBtn from '../components/Header/HeaderBtn'
+import CloseBtn from '../components/CloseBtn'
+import NotificationBox from './NotificationBox'
 import TVIcon from '../assets/images/svg/tv.svg'
 import BellOn from '../assets/images/svg/bell.svg'
 import User from '../assets/images/svg/user.svg'
-// import BellOff from '../assets/images/svg/bell-off.svg'
+
+import { notifications } from '../libs/dummies'
 
 const Header = () => {
   const [searchText, setSearchText] = useState('')
+  const [isExpanded, setExpanded] = useState(false)
   const onChangeHandle = useCallback((text: string) => {
     setSearchText(text)
   }, [])
   const onClickHandle = (e: string) => {
-    console.log(e)
+    switch (e) {
+      case 'notification':
+        setExpanded(true)
+        break
+      default:
+        console.log('Header button clicked')
+    }
   }
+
   return (
-    <div id="header">
-      <SearchBar text={searchText} onChangeText={onChangeHandle} />
-      <div className="flex flex-row-reverse">
-        <HeaderBtn
-          className="bg-transparent"
-          icon={User}
-          alt="notification-btn"
-          onClick={() => {
-            onClickHandle('live')
-          }}
+    <Fragment>
+      <div id="header" className="w-full py-4 grid grid-cols-6 gap-2">
+        <SearchBar
+          text={searchText}
+          onChangeText={onChangeHandle}
+          className="md:col-start-1 col-start-1 md:col-span-2 col-span-6 rounded-full bg-gray-800 text-gray-300 flex hover:shadow-md hover:shadow-sky-500/40"
         />
-        <HeaderBtn
-          icon={TVIcon}
-          alt="notification-btn"
-          onClick={() => {
-            onClickHandle('live')
-          }}
-        />
-        <HeaderBtn
-          icon={BellOn}
-          alt="notification-btn"
-          onClick={() => {
-            onClickHandle('notification')
-          }}
-        />
+        <div className="md:col-end-7 col-end-7 md:col-span-2 col-span-6 flex flex-row-reverse">
+          <HeaderBtn
+            className="bg-transparent"
+            icon={User}
+            alt="notification-btn"
+            onClick={() => {
+              onClickHandle('live')
+            }}
+          />
+          <HeaderBtn
+            icon={TVIcon}
+            alt="notification-btn"
+            onClick={() => {
+              onClickHandle('live')
+            }}
+          />
+          <HeaderBtn
+            icon={BellOn}
+            alt="notification-btn"
+            notifications={notifications.length}
+            onClick={() => {
+              onClickHandle('notification')
+            }}
+          />
+        </div>
       </div>
-    </div>
+      {isExpanded && (
+        <div
+          id="notifications"
+          className="absolute right-2 top-2 md:w-1/4 sm:w-1/2 w-4/6 md:h-3/6 sm:h-4/6 h-5/6 bg-gray-800/80 rounded-lg p-2 scroll-y-auto text-right shadow-md shadow-sky-800"
+        >
+          <CloseBtn
+            onClick={() => {
+              setExpanded(false)
+            }}
+          />
+          <NotificationBox notifications={notifications} />
+        </div>
+      )}
+    </Fragment>
   )
 }
 
