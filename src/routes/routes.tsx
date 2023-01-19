@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import App from '../App'
 import Home from '../pages/Home'
 import Store from '../pages/Store'
+import Games from '../pages/Games'
 import ComingSoon from '../pages/ComingSoon'
 
 const AppRoutes = () => {
@@ -11,6 +12,7 @@ const AppRoutes = () => {
         <Route path="/" element={<App />}>
           <Route path="" element={<Home />} />
           <Route path="home" element={<Home />} />
+          <Route path="games" element={<Games />} />
           <Route path="store" element={<Store />} />
           <Route path="*" element={<ComingSoon />} />
         </Route>

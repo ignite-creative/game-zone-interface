@@ -7,7 +7,7 @@ export const notifications: INotification[] = [
     description: 'You will experience fantastic games here',
   },
   {
-    id: '123-456',
+    id: '234-789',
     type: 'client',
     subject: '8v8 elimination started',
     description: 'Please join the tournament and win to get awesome award',

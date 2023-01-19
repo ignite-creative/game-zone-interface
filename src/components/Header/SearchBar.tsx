@@ -18,7 +18,7 @@ const SearchBar = (props: Props) => {
         onChange={(e) => {
           props.onChangeText(e.target.value)
         }}
-        className="bg-transparent outline-0 ml-2"
+        className="bg-transparent outline-0 ml-2 w-full"
         placeholder="Search..."
       />
     </div>

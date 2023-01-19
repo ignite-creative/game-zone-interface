@@ -1,7 +1,9 @@
+import Carousel from '../containers/Carousel'
+
 const Home = () => {
   return (
-    <div id="home">
-      <h1 className="font-bold font-lg">Home Page</h1>
+    <div id="home" className="">
+      <Carousel />
     </div>
   )
 }

@@ -28,8 +28,15 @@ body,
   width: 100vw;
   height: 100vh;
   font-family: 'primary';
+  margin: 0;
+  padding: 0;
 }
 
-#root {
-  @apply bg-gray-900 flex justify-center items-center;
+.content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
 }

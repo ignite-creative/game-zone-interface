@@ -1,4 +1,4 @@
-import { useState, useCallback, Fragment } from 'react'
+import { useState, useCallback, Fragment, useEffect } from 'react'
 import SearchBar from '../components/Header/SearchBar'
 import HeaderBtn from '../components/Header/HeaderBtn'
 import CloseBtn from '../components/CloseBtn'
@@ -25,15 +25,19 @@ const Header = () => {
     }
   }
 
+  useEffect(() => {
+    console.log(window.location.href)
+  }, [])
+
   return (
     <Fragment>
-      <div id="header" className="w-full py-4 grid grid-cols-6 gap-2">
+      <div id="header" className="w-full py-4 grid grid-cols-12 gap-2">
         <SearchBar
           text={searchText}
           onChangeText={onChangeHandle}
-          className="md:col-start-1 col-start-1 md:col-span-2 col-span-6 rounded-full bg-gray-800 text-gray-300 flex hover:shadow-md hover:shadow-sky-500/40"
+          className="md:col-start-1 md:col-span-4 col-start-1 col-span-12 rounded-full bg-gray-800 text-gray-300 flex hover:shadow-md hover:shadow-sky-500/40 box-border pr-2"
         />
-        <div className="md:col-end-7 col-end-7 md:col-span-2 col-span-6 flex flex-row-reverse">
+        <div className="md:col-end-13 md:col-span-4 col-end-13 col-span-12 flex flex-row-reverse">
           <HeaderBtn
             className="bg-transparent"
             icon={User}
